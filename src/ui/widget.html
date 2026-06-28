@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chess</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="theme-dark">
+  <div id="app">
+    <header class="app-header">
+      <h1 id="app-title">Chess</h1>
+      <div class="status-indicator">
+        <span class="dot"></span>
+        <span class="status-text">Live</span>
+      </div>
+    </header>
+    <main class="app-main">
+      <div class="players">
+        <div class="player" id="player-black">
+          <div class="face" id="black-face"></div>
+          <div class="cloud" id="black-cloud" hidden></div>
+          <div class="pmeta">
+            <span class="swatch black"></span>
+            <span class="pname" id="black-name">Black: waiting&hellip;</span>
+            <span class="emotion-label" id="black-emotion"></span>
+          </div>
+        </div>
+        <div class="banner" id="banner">Loading&hellip;</div>
+        <div class="player" id="player-white">
+          <div class="face" id="white-face"></div>
+          <div class="cloud" id="white-cloud" hidden></div>
+          <div class="pmeta">
+            <span class="swatch white"></span>
+            <span class="pname" id="white-name">White: waiting&hellip;</span>
+            <span class="emotion-label" id="white-emotion"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="board-wrap">
+        <div id="board" class="board"></div>
+      </div>
+
+      <section class="moves">
+        <h3>Moves</h3>
+        <ol id="movelist"></ol>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="./widget.ts"></script>
+</body>
+</html>

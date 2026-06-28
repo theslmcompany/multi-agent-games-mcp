@@ -1,0 +1,31 @@
+{
+  "name": "chess-ui",
+  "version": "1.0.0",
+  "type": "module",
+  "packageManager": "pnpm@10.16.1",
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "^1.7.1",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "chess.js": "^1.0.0",
+    "express": "^5.2.1",
+    "cors": "^2.8.6",
+    "zod": "^4.4.3",
+    "tsx": "^4.21.0"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vite": "^8.0.12",
+    "vite-plugin-singlefile": "^2.3.3",
+    "@types/express": "^5.0.6",
+    "@types/cors": "^2.8.17",
+    "@types/node": "^25.6.2"
+  },
+  "scripts": {
+    "build": "tsc && pnpm run build:ui",
+    "build:ui": "vite build",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "ui:dev": "vite",
+    "preview": "node preview-server.mjs"
+  }
+}
