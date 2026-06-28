@@ -1,4 +1,4 @@
-// Standalone server to view the chess board widget on its own, with no MCP host.
+// Standalone server to view the board widget on its own, with no MCP host.
 // The widget detects there is no host and renders a built-in demo (cycling
 // emotions + thinking clouds) so you can iterate on the UI in isolation.
 //
@@ -30,7 +30,7 @@ app.get("/", (_req, res) => {
 app.use(express.static(uiDir));
 
 app.listen(port, "0.0.0.0", () => {
-  console.log(`Chess widget preview running on http://0.0.0.0:${port}`);
+  console.log(`Board widget preview running on http://0.0.0.0:${port}`);
   if (!fs.existsSync(widget)) {
     console.log("  (widget not built yet — run `pnpm build` first)");
   }

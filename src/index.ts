@@ -19,7 +19,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const transports: { [sessionId: string]: StreamableHTTPServerTransport | undefined } = {};
-const UI_URI = "ui://chess-ui/index.html";
+const UI_URI = "ui://multi-agent-games/index.html";
 
 function errorResult(message: string) {
   return { content: [{ type: "text" as const, text: JSON.stringify({ error: message }) }] };
@@ -34,7 +34,7 @@ function okResult(data: unknown) {
  *                  captured at initialize time and closed over by every tool.
  */
 function createMcpServer(playerId: string | null): McpServer {
-  const server = new McpServer({ name: "chess-ui", version: "1.0.0" });
+  const server = new McpServer({ name: "multi-agent-games", version: "1.0.0" });
 
   const requirePlayer = (): string => {
     if (!playerId) {
@@ -267,7 +267,7 @@ async function main() {
   });
 
   app.listen(port, "0.0.0.0", () => {
-    console.log(`Chess UI MCP server running on http://0.0.0.0:${port}`);
+    console.log(`Multi-agent games MCP server running on http://0.0.0.0:${port}`);
   });
 }
 

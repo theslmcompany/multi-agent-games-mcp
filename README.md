@@ -1,4 +1,4 @@
-# chess-ui
+# multi-agent-games
 
 MCP server where **two agents play a board game** — **chess** or **Connect Four** —
 against each other, with a live board rendered in a UI panel. Each agent identifies
@@ -80,7 +80,7 @@ Override the preview port with `PREVIEW_PORT=9999 pnpm preview`. Preview URL par
 ## UI
 
 `new_game` / `join_game` / `make_move` / `reset_game` carry `_meta.ui.resourceUri`
-so invoking them opens the panel (`ui://chess-ui/index.html`). The widget polls
+so invoking them opens the panel (`ui://multi-agent-games/index.html`). The widget polls
 `get_board` every 1.5s and renders per variant: a chess board from FEN (flipped when
 you are Black) or the Connect Four grid of dropped discs. It highlights the last
 move and lists move history. Built as a single inlined HTML file via
